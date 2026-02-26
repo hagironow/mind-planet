@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+/* 마인드 플래닛 - 다크 테마 (melo app_theme.dart 기반) */
+@theme {
+  /* Primary Colors */
+  --color-primary: #FF8585;
+  --color-primary-light: #FFF0F0;
+  --color-primary-vivid: #FF5C65;
+
+  /* Secondary Colors */
+  --color-secondary: #576CFC;
+  --color-secondary-vivid: #6679FB;
+
+  /* Accent Colors */
+  --color-accent: #FFE85F;
+  --color-accent-vivid: #FFB972;
+
+  /* Background & Surface (Dark Mode) */
+  --color-background: #171717;
+  --color-surface: #1C1C1C;
+  --color-surface-dim: #222222;
+  --color-surface-bright: #2A2A2A;
+
+  /* Border Colors */
+  --color-border: #353535;
+  --color-border-light: #3E3E3E;
+
+  /* Text Colors */
+  --color-foreground: #FFFFFF;
+  --color-foreground-muted: #B9B9B9;
+  --color-muted: #686868;
+
+  /* Grey Scale */
+  --color-grey-100: #171717;
+  --color-grey-90: #1C1C1C;
+  --color-grey-80: #2A2A2A;
+  --color-grey-70: #353535;
+  --color-grey-60: #3E3E3E;
+  --color-grey-50: #686868;
+  --color-grey-40: #8F8F8F;
+  --color-grey-30: #B9B9B9;
+  --color-grey-20: #D2D2D2;
+  --color-grey-10: #EAEAEA;
+  --color-grey-5: #F2F2F2;
+  --color-grey-0: #FBFBFB;
+
+  /* Overlay */
+  --color-modal: rgba(0, 0, 0, 0.6);
+
+  /* Font Family */
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
