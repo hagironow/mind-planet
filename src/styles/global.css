@@ -65,6 +65,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Gradient Backgrounds */
+.gradient-dark {
+  background: linear-gradient(180deg, #171717 0%, #1C1C1C 50%, #222222 100%);
+}
+
+.gradient-surface {
+  background: linear-gradient(180deg, #1C1C1C 0%, #222222 50%, #1C1C1C 100%);
+}
+
+.gradient-radial {
+  background: radial-gradient(ellipse at 50% 0%, #2A2A2A 0%, #171717 70%);
+}
+
+.gradient-radial-subtle {
+  background: radial-gradient(ellipse at 50% 0%, #1E1E1E 0%, #171717 70%);
+}
+
+.gradient-radial-bottom {
+  background: radial-gradient(ellipse at 50% 100%, #2A2A2A 0%, #171717 70%);
+}
+
+.gradient-spotlight {
+  background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.03) 0%, transparent 50%);
+}
+
 /* Selection */
 ::selection {
   background-color: var(--color-primary);

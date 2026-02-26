@@ -5,90 +5,437 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="마인드 플래닛 - AI 감정 코칭">
   <!-- Hero Section -->
   <main class="min-h-screen">
-    <section class="flex flex-col items-center justify-center min-h-screen px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-6">
-        <span class="text-primary">마인드</span>
-        <span class="text-foreground">플래닛</span>
+    <section class="flex flex-col items-center justify-center min-h-screen px-6 py-20 gradient-radial relative">
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none"
+        style="background-image: url('/sectionbg.jpg');"
+      ></div>
+      <!-- Logo -->
+      <div class="mb-12 md:mb-16">
+        <img
+          src="/logo_mp.svg"
+          alt="mindplanet"
+          class="h-7 md:h-9 w-auto"
+        />
+      </div>
+
+      <!-- Title -->
+      <h1 class="text-2xl md:text-4xl lg:text-5xl font-normal text-foreground text-center leading-snug max-w-4xl mb-8">
+        왜 나는 늘 같은 상황에서 힘들까?<br />
+        <span class="text-primary">답은 당신의 무의식 속에 있습니다.</span>
       </h1>
-      <p class="text-xl md:text-2xl text-foreground-muted mb-8 max-w-2xl">
-        AI와 함께하는 감정 일기 & CBT 코칭
+
+      <!-- Subtitle -->
+      <p class="text-base md:text-lg lg:text-xl text-foreground-muted text-center leading-relaxed max-w-2xl mb-12 md:mb-16">
+        지금 하고 있는 생각을 들려주세요.<br />
+        AI 친구 멜로가 당신의 문장 사이에서 반복되는 무의식 패턴을 찾아내고,<br class="hidden md:block" />
+        당신만을 위한 심리 리포트를 작성해 드립니다.
       </p>
+
+      <!-- App Store Buttons -->
       <div class="flex flex-col sm:flex-row gap-4">
+        <!-- App Store Button -->
         <a
-          href="#features"
-          class="px-8 py-3 bg-primary text-background font-medium rounded-full hover:bg-primary-vivid transition-colors"
+          href="#"
+          class="flex items-center justify-center gap-3 px-6 py-3 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity min-w-[180px]"
+          aria-label="Download on the App Store"
         >
-          시작하기
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-tight opacity-80">Download on the</div>
+            <div class="text-sm font-semibold leading-tight">App Store</div>
+          </div>
         </a>
+
+        <!-- Google Play Button -->
         <a
-          href="#about"
-          class="px-8 py-3 border border-border text-foreground font-medium rounded-full hover:bg-surface-bright transition-colors"
+          href="#"
+          class="flex items-center justify-center gap-3 px-6 py-3 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity min-w-[180px]"
+          aria-label="Get it on Google Play"
         >
-          더 알아보기
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+          </svg>
+          <div class="text-left">
+            <div class="text-[10px] leading-tight opacity-80">GET IT ON</div>
+            <div class="text-sm font-semibold leading-tight">Google Play</div>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-24 px-6">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
-          <span class="text-secondary">핵심</span> 기능
-        </h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- Feature 1 -->
-          <div class="p-8 bg-surface rounded-2xl border border-border">
-            <div class="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4">
-              <span class="text-2xl">📝</span>
+    <!-- 2. Problem Section -->
+    <section class="py-24 px-6 bg-background">
+      <div class="max-w-4xl mx-auto">
+        <!-- 좌우 2컬럼 레이아웃 -->
+        <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+          <!-- 왼쪽: 텍스트 -->
+          <div>
+            <p class="text-primary text-sm font-medium mb-4 tracking-wide">THE PROBLEM</p>
+            <h2 class="text-xl md:text-2xl lg:text-3xl font-bold text-foreground leading-[1.3] mb-6">
+              "괜찮아, 그럴 수 있어"<br />
+              <span class="text-foreground-muted">그 위로, 왜 오래가지 않을까요?</span>
+            </h2>
+            <div class="space-y-4 text-foreground-muted leading-relaxed">
+              <p>
+                따뜻한 공감도 잠시뿐.<br />
+                돌아서면 다시 찾아오는 불안과 자책.
+              </p>
+              <p>
+                문제는 <span class="text-foreground">'공감의 부족'</span>이 아닙니다.<br />
+                당신의 행동을 조종하는 건<br />
+                <span class="text-primary">10%의 의식이 아니라, 90%의 무의식</span>이니까요.
+              </p>
+              <p>
+                내 마음의 '작동 원리'를 모르면<br />
+                같은 감정의 패턴은 계속 반복됩니다.
+              </p>
             </div>
-            <h3 class="text-xl font-semibold mb-3">감정 일기</h3>
-            <p class="text-foreground-muted">
-              매일의 감정을 기록하고 패턴을 파악하세요
-            </p>
           </div>
 
-          <!-- Feature 2 -->
-          <div class="p-8 bg-surface rounded-2xl border border-border">
-            <div class="w-12 h-12 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
-              <span class="text-2xl">🤖</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">AI CBT 코칭</h3>
-            <p class="text-foreground-muted">
-              인지행동치료 기반 AI 코칭으로 마음 건강 관리
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div class="p-8 bg-surface rounded-2xl border border-border">
-            <div class="w-12 h-12 bg-accent/20 rounded-xl flex items-center justify-center mb-4">
-              <span class="text-2xl">📊</span>
-            </div>
-            <h3 class="text-xl font-semibold mb-3">통계 분석</h3>
-            <p class="text-foreground-muted">
-              감정 변화를 시각화하고 인사이트를 얻으세요
-            </p>
+          <!-- 오른쪽: 이미지 -->
+          <div class="aspect-square bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
+            <span class="text-muted text-lg">이미지</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 px-6 bg-surface">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-3xl md:text-4xl font-bold mb-8">
-          당신의 마음을 위한 <span class="text-accent">안전한 공간</span>
+    <!-- 3. Solution Section -->
+    <section class="py-24 px-6 gradient-surface">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">THE SOLUTION</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-6 leading-[1.3]">
+          마인드 플래닛은 공감을 넘어<br />
+          <span class="text-primary">'직면'</span>을 돕습니다
         </h2>
-        <p class="text-lg text-foreground-muted leading-relaxed">
-          마인드 플래닛은 과학적으로 검증된 인지행동치료(CBT) 기법을 바탕으로
-          당신의 감정을 이해하고 관리할 수 있도록 도와드립니다.
+
+        <p class="text-center text-foreground-muted text-lg md:text-xl mt-6 mb-16 max-w-2xl mx-auto leading-relaxed">
+          다른 앱은 "오늘 기분 어때?"에서 끝나지만,<br />
+          마인드 플래닛은 <span class="text-foreground">"왜 그런 기분이 드는지"</span>를 알려줍니다.
         </p>
+
+        <!-- 비교 카드 -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- 일기 앱 -->
+          <div class="p-5 bg-background rounded-2xl border border-border">
+            <p class="text-foreground text-sm mb-2">일기 앱</p>
+            <p class="text-primary text-lg mb-4">기록 위주</p>
+            <p class="text-muted text-sm leading-relaxed">
+              오늘 뭐 했는지<br />
+              적어두기만
+            </p>
+          </div>
+
+          <!-- AI 챗봇 -->
+          <div class="p-5 bg-background rounded-2xl border border-border">
+            <p class="text-foreground text-sm mb-2">AI 챗봇</p>
+            <p class="text-primary text-lg mb-4">공감 위주</p>
+            <p class="text-muted text-sm leading-relaxed">
+              "힘들었겠다"<br />
+              위로만 반복
+            </p>
+          </div>
+
+          <!-- 사주/MBTI -->
+          <div class="p-5 bg-background rounded-2xl border border-border">
+            <p class="text-foreground text-sm mb-2">사주 · MBTI</p>
+            <p class="text-primary text-lg mb-4">재미 위주</p>
+            <p class="text-muted text-sm leading-relaxed">
+              한 번 보고 끝<br />
+              상황별 적용 불가
+            </p>
+          </div>
+
+          <!-- 마인드 플래닛 -->
+          <div class="p-5 bg-primary/10 rounded-2xl border border-primary/30">
+            <p class="text-foreground text-sm mb-2">마인드 플래닛</p>
+            <p class="text-primary text-lg mb-4">심리 분석</p>
+            <p class="text-foreground-muted text-sm leading-relaxed">
+              내 기질 기반<br />
+              <span class="text-foreground">상황별 무의식 해석</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- 이미지 Placeholder -->
+        <div class="mt-16 w-full aspect-video bg-surface-bright rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
+          <span class="text-muted text-lg">이미지</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Authority Section -->
+    <section class="py-24 px-6 relative overflow-hidden">
+      <div class="absolute inset-0 gradient-spotlight pointer-events-none"></div>
+      <div class="max-w-4xl mx-auto relative z-10">
+        <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">WHY MIND PLANET</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-16 leading-[1.3]">
+          검증된 심리학을<br />
+          <span class="text-primary">알고리즘에 담았습니다</span>
+        </h2>
+
+        <div class="space-y-6">
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <h3 class="text-lg md:text-xl font-medium mb-3 text-primary">인지행동치료 (CBT)</h3>
+            <p class="text-foreground-muted leading-relaxed">
+              우울증, 불안장애 치료에 가장 효과적이라고 검증된 심리치료법.<br />
+              <span class="text-foreground">"생각이 감정을 만든다"</span>는 원리로 왜곡된 사고 패턴을 교정합니다.
+            </p>
+          </div>
+
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <h3 class="text-lg md:text-xl font-medium mb-3 text-primary">수용전념치료 (ACT)</h3>
+            <p class="text-foreground-muted leading-relaxed">
+              하버드, 스탠포드에서 연구되는 차세대 심리치료법.<br />
+              <span class="text-foreground">부정적 감정을 없애려 하지 않고 있는 그대로 받아들이며 행동을 바꿉니다.
+            </p>
+          </div>
+
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <h3 class="text-lg md:text-xl font-medium mb-3 text-primary">기질과 욕구 기반</h3>
+            <p class="text-foreground-muted leading-relaxed">
+              사람마다 다른 기질과 핵심 욕구를 분석합니다.<br />
+              <span class="text-foreground">같은 상황, 다른 반응</span>— 그 이유를 당신의 내면에서 찾아드립니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- 이미지 Placeholder -->
+        <div class="mt-10 w-full aspect-video bg-surface-bright rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
+          <span class="text-muted text-lg">이미지</span>
+        </div>
+
+        <!-- 면책 문구 -->
+        <p class="mt-12 text-center text-sm text-primary">
+          * AI에 의해 작성된 리포트이며, 전문적인 심리 치료를 대체하지 않습니다.<br />
+          심각한 증상이 있다면 반드시 전문가의 진단을 받으세요.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5. Reviews Section -->
+    <section class="py-24 px-6 bg-background">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">REVIEWS</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-16 leading-[1.3] text-foreground">
+          "인생의 매뉴얼을 받은 기분이에요"
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <!-- Review 1 -->
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <div class="w-12 h-12 bg-surface-bright rounded-full border-2 border-dashed border-border flex items-center justify-center mb-4">
+              <span class="text-muted text-xs">img</span>
+            </div>
+            <p class="text-foreground-muted leading-relaxed mb-4">
+              "상담 센터에 가기는 부담스러웠는데,<br />
+              누워서 폰으로 대화하는 것 만으로도<br />
+              마음이 정리되는 것 같아 너무 유용해요"
+            </p>
+            <p class="text-muted text-sm">20대 취준생 K님</p>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <div class="w-12 h-12 bg-surface-bright rounded-full border-2 border-dashed border-border flex items-center justify-center mb-4">
+              <span class="text-muted text-xs">img</span>
+            </div>
+            <p class="text-foreground-muted leading-relaxed mb-4">
+              "매번 비슷한 상황에서 무너지던 저를<br />
+              이해하게 되니 더 편안하게<br />
+              상황을 넘길 수 있게 되었어요"
+            </p>
+            <p class="text-muted text-sm">30대 직장인 P님</p>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <div class="w-12 h-12 bg-surface-bright rounded-full border-2 border-dashed border-border flex items-center justify-center mb-4">
+              <span class="text-muted text-xs">img</span>
+            </div>
+            <p class="text-foreground-muted leading-relaxed mb-4">
+              "공감만 해주는 앱은 지겨웠는데,<br />
+              멜로는 제 생각을 날카롭게 분석해주니<br />
+              리포트 읽으며 운 적이 한 두번이 아니네요"
+            </p>
+            <p class="text-muted text-sm">40대 프리랜서 L님</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Features Section -->
+    <section class="py-24 px-6 gradient-radial-subtle">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">FEATURES</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-4 leading-[1.3]">
+          당신은 대화만 하세요,<br />
+          <span class="text-primary">기록은 멜로가 합니다</span>
+        </h2>
+        <p class="text-center text-foreground-muted mb-16">
+          귀찮은 건 멜로에게 맡기세요
+        </p>
+
+        <div class="space-y-20">
+          <!-- Feature 1 -->
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-xl md:text-2xl font-normal mb-4 text-primary">
+                자동 일기과 카테고리 생성
+              </h3>
+              <p class="text-foreground-muted leading-relaxed">
+                일기 쓰기가 정신 건강에 좋다는 사실을 모르는 사람은 없을거에요.<br />
+                멜로와 나눈 대화가 그대로 한 편의 완성된 일기로 저장됩니다.<br />
+                더이상 빈 화면을 마주하며 무엇을 쓸까 고민하지 마세요.
+              </p>
+            </div>
+            <div class="aspect-[4/3] bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
+              <span class="text-muted text-lg">이미지</span>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div class="md:order-2">
+              <h3 class="text-xl md:text-2xl font-normal mb-4 text-primary">
+                대화 전 후의 감정 기록이 가능한 무드 캘린더
+              </h3>
+              <p class="text-foreground-muted leading-relaxed">
+                당신의 감정 날씨를 한눈에 확인하고,<br />
+                특정 요일이나 상황에 반복되는 패턴을 추적합니다.<br />
+                멜로와 대화 전, 대화 후의 기분 변화까지 기록하며 성취감을 느껴보세요.
+              </p>
+            </div>
+            <div class="aspect-[4/3] bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center md:order-1">
+              <span class="text-muted text-lg">이미지</span>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+              <h3 class="text-xl md:text-2xl font-normal mb-4 text-primary">
+                이번주 행성 카드를 열어보세요
+              </h3>
+              <p class="text-foreground-muted leading-relaxed">
+                "당신은 주로 이런 상황에서 '억압' 기제를 사용하네요."<br />
+                한 달간의 데이터를 모아 나만의 심리 통계를 제공합니다.<br />
+              </p>
+            </div>
+            <div class="aspect-[4/3] bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
+              <span class="text-muted text-lg">이미지</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section class="py-24 px-6 gradient-surface">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">FAQ</p>
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-16 leading-[1.3]">
+          궁금해하실 것 같아서<br />
+          <span class="text-primary">미리 준비했어요</span>
+        </h2>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <details class="group p-6 bg-background rounded-2xl border border-border">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="text-lg font-normal text-foreground">Q. 제 비밀이 보장되나요?</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-foreground-muted leading-relaxed">
+              당연합니다. 모든 대화는 암호화되어 당신의 기기에만 저장됩니다.<br />
+              개발자도 당신의 속마음은 엿볼 수 없습니다.
+            </p>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="group p-6 bg-background rounded-2xl border border-border">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="text-lg font-normal text-foreground">Q. 심리 상담을 대체할 수 있나요?</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-foreground-muted leading-relaxed">
+              멜로는 전문적인 치료가 아닌 '셀프 케어' 도구입니다.<br />
+              하지만 일상적인 멘탈 관리와 자기 이해에는 상담 못지않은 통찰을 드립니다.
+            </p>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="group p-6 bg-background rounded-2xl border border-border">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="text-lg font-normal text-foreground">Q. 사용법이 어렵지는 않나요?</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-foreground-muted leading-relaxed">
+              카카오톡을 할 줄 아는 분이라면 누구나 가능합니다.<br />
+              멜로가 먼저 질문을 던져주니까요.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Final CTA Section -->
+    <section class="py-24 px-6 gradient-radial-bottom relative">
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10 pointer-events-none"
+        style="background-image: url('/sectionbg.jpg');"
+      ></div>
+      <div class="max-w-3xl mx-auto text-center relative z-10">
+        <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal mb-6 leading-[1.3]">
+          지금, <span class="text-primary">진짜 나를 만나러</span> 가볼까요?
+        </h2>
+        <p class="text-foreground-muted mb-10">
+          무료로 시작하고, 당신만의 무의식 패턴을 발견하세요.<br>
+          <span class="text-primary">첫 가입시 마음 분석 3회권 무료 & 일주일 무료 체험으로 시작하세요</span>
+        </p>
+
+        <!-- App Store Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="#"
+            class="flex items-center justify-center gap-3 px-6 py-3 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity min-w-[180px]"
+            aria-label="Download on the App Store"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-[10px] leading-tight opacity-80">Download on the</div>
+              <div class="text-sm font-semibold leading-tight">App Store</div>
+            </div>
+          </a>
+
+          <a
+            href="#"
+            class="flex items-center justify-center gap-3 px-6 py-3 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity min-w-[180px]"
+            aria-label="Get it on Google Play"
+          >
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+            </svg>
+            <div class="text-left">
+              <div class="text-[10px] leading-tight opacity-80">GET IT ON</div>
+              <div class="text-sm font-semibold leading-tight">Google Play</div>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-8 px-6 border-t border-border">
       <div class="max-w-6xl mx-auto text-center text-muted">
-        <p>&copy; 2024 마인드 플래닛. All rights reserved.</p>
+        <p>&copy; 2025 Playke. All rights reserved.</p>
       </div>
     </footer>
   </main>
