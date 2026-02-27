@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Privacy Policy - Mind Planet">
+  <main class="min-h-screen pt-24 pb-16 px-6 bg-background">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <a href="/privacy-policy-kr" class="text-sm px-3 py-1 bg-surface text-muted rounded-full hover:text-foreground transition-colors">KR</a>
+          <a href="/privacy-policy-en" class="text-sm px-3 py-1 bg-primary/20 text-primary rounded-full">EN</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Privacy Policy</h1>
+        <p class="text-muted">Effective date: July 1, 2025 · Last updated: February 23, 2026</p>
+      </header>
+
+      <!-- Content -->
+      <div class="space-y-12 text-foreground-muted leading-relaxed">
+
+        <!-- Overview -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">Overview</h2>
+          <p>Playke ("we", "Company") complies with applicable privacy laws. This policy explains what personal data we collect in connection with the Mind Planet app ("Service"), how we use it, how long we retain it, and how we protect it.</p>
+        </section>
+
+        <!-- Section 1 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">1. Medical Disclaimer (Important)</h2>
+          <div class="bg-primary/10 border border-primary/30 rounded-xl p-6">
+            <p class="text-foreground font-medium">The Service is NOT a medical device and does not provide medical diagnoses, clinical advice, or treatment.</p>
+            <p class="mt-3">All insights, analysis, and feedback provided by the Service, including AI-generated content, are for personal wellness and self-reflection purposes only. Users should always consult a physician or qualified health professional for medical concerns.</p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">2. Data We Collect & How</h2>
+          <div class="space-y-4">
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Required data</p>
+              <p>None (no collection for basic use)</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Optional data (for paid subscriptions & sync)</p>
+              <p>Anonymous ID (Firebase UID), randomly issued short codes for data synchronization</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">User-Generated Content</p>
+              <p>Text entered by the user (e.g., emotion logs, notes) for AI-powered analysis</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Automatically collected</p>
+              <p>Device info, OS version, app version (collected for log analytics)</p>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-surface-bright rounded-xl border border-border">
+            <p class="text-sm"><span class="text-primary">Note on Storage:</span> User-entered data is stored locally by default. For paid subscribers, records are encrypted and stored on servers for backup. When using AI features, text data is transmitted to third-party AI processors.</p>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">3. Purposes of Use</h2>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Provide app features (anonymous auth, subscription management, sync)</li>
+            <li><span class="text-foreground">AI-Powered Analysis:</span> Providing personalized emotional insights and feedback</li>
+            <li>Operations, issue analysis, and service improvement statistics</li>
+            <li>Retention and responses required by law</li>
+          </ul>
+        </section>
+
+        <!-- Section 4 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">4. Sharing with Third-party AI Service Providers</h2>
+          <p class="mb-4">To provide AI analysis, we share the minimum necessary data with the following providers:</p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Providers</p>
+              <p>OpenAI (API), Google (Gemini API)</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Data Shared</p>
+              <p>User-entered text (logs/notes) only</p>
+            </div>
+          </div>
+          <div class="p-4 bg-surface-bright rounded-xl border border-border">
+            <p class="text-sm"><span class="text-foreground">Policy:</span> No personal identifiers (names, emails, or short codes) are shared. Data is processed in real-time and is NOT used to train AI models.</p>
+          </div>
+        </section>
+
+        <!-- Section 5 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">5. Other Service Providers</h2>
+          <div class="bg-surface rounded-xl p-5">
+            <p class="mb-2"><span class="text-foreground-muted">Vendor:</span> <span class="text-foreground">Google Firebase</span></p>
+            <p class="mb-2"><span class="text-foreground-muted">Purpose:</span> <span class="text-foreground">Anonymous authentication and analytics</span></p>
+            <p><span class="text-foreground-muted">Retention:</span> <span class="text-foreground">Until the end of the contract or service</span></p>
+          </div>
+        </section>
+
+        <!-- Section 6 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">6. Retention Periods</h2>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary text-sm mb-1">Anonymous Auth Info & Short Codes</p>
+              <p class="text-foreground font-medium">Deleted after 1 year of inactivity</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary text-sm mb-1">App Usage Logs</p>
+              <p class="text-foreground font-medium">Up to 6 months</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5 md:col-span-2">
+              <p class="text-primary text-sm mb-1">Emotion/Record Data</p>
+              <p class="text-foreground font-medium">Stored locally by default. Server-synced data for paid users is retained permanently until a deletion request is made.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 7 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">7. Your Rights & How to Exercise</h2>
+          <ul class="list-disc list-inside space-y-2 ml-4 mb-4">
+            <li>You may request deletion of personal data synchronized to the server</li>
+            <li>Submit requests via the in-app "Help Center" or email us</li>
+          </ul>
+          <div class="bg-surface rounded-xl p-5">
+            <p class="text-primary font-medium">Contact: melo@playke.app</p>
+          </div>
+        </section>
+
+        <!-- Section 8 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">8. Safeguards</h2>
+          <ul class="list-disc list-inside space-y-2 ml-4">
+            <li>Data minimization and encrypted storage</li>
+            <li>Access controls and access logs</li>
+            <li>Server protection with antivirus and security tools</li>
+            <li>Local data auto-deletion options</li>
+          </ul>
+        </section>
+
+        <!-- Section 9 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">9. Changes & Notice</h2>
+          <p>This policy may change. We will provide prior notice in the app or via notifications when updated.</p>
+        </section>
+
+        <!-- Contact -->
+        <section class="bg-surface rounded-xl p-6">
+          <p class="mb-2"><span class="text-foreground-muted">Contact:</span> <span class="text-foreground">melo@playke.app</span></p>
+          <p><span class="text-foreground-muted">Company:</span> <span class="text-foreground">Playke, Seoul, Korea</span></p>
+        </section>
+
+      </div>
+
+      <!-- Back to home -->
+      <div class="mt-16 pt-8 border-t border-border">
+        <a href="/" class="text-primary hover:underline">&larr; Back to Home</a>
+      </div>
+    </article>
+  </main>
+</Layout>

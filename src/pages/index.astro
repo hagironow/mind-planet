@@ -3,8 +3,23 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="마인드 플래닛 - AI 감정 코칭">
+  <!-- GNB -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="flex items-center">
+        <img src="/logo_mp.svg" alt="마인드 플래닛" class="h-6 w-auto" />
+      </a>
+      <!-- Menu -->
+      <div class="flex items-center gap-8">
+        <a href="#" class="text-sm text-foreground-muted hover:text-foreground transition-colors">마인드 플래닛</a>
+        <a href="#" class="text-sm text-foreground-muted hover:text-foreground transition-colors">마음 행성 테스트</a>
+      </div>
+    </div>
+  </nav>
+
   <!-- Hero Section -->
-  <main class="min-h-screen">
+  <main class="min-h-screen pt-16">
     <section class="flex flex-col items-center justify-center min-h-screen px-6 py-20 gradient-radial relative">
       <!-- Background Image -->
       <div
@@ -30,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-base md:text-lg lg:text-xl text-foreground-muted text-center leading-relaxed max-w-2xl mb-12 md:mb-16">
         지금 하고 있는 생각을 들려주세요.<br />
         AI 친구 멜로가 당신의 문장 사이에서 반복되는 무의식 패턴을 찾아내고,<br class="hidden md:block" />
-        당신만을 위한 심리 리포트를 작성해 드립니다.
+        당신만을 위한 심리 리포트를 작성해 드려요
       </p>
 
       <!-- App Store Buttons -->
@@ -97,9 +112,11 @@ import Layout from '../layouts/Layout.astro';
           </div>
 
           <!-- 오른쪽: 이미지 -->
-          <div class="aspect-square bg-surface rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
-            <span class="text-muted text-lg">이미지</span>
-          </div>
+          <img
+            src="/problem.jpg"
+            alt="공감의 한계"
+            class="aspect-square object-cover rounded-[24px]"
+          />
         </div>
       </div>
     </section>
@@ -204,10 +221,16 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
 
-        <!-- 이미지 Placeholder -->
-        <div class="mt-10 w-full aspect-video bg-surface-bright rounded-2xl border-2 border-dashed border-border flex items-center justify-center">
-          <span class="text-muted text-lg">이미지</span>
+          <div class="p-6 md:p-8 bg-surface rounded-2xl border border-border">
+            <h3 class="text-lg md:text-xl font-medium mb-3 text-primary">단기, 중장기, 장기 액션 플랜 제시</h3>
+            <p class="text-foreground-muted leading-relaxed">
+              분석과 인지에서 끝나지 않습니다. <br />
+              <span class="text-foreground">현재의 그 고민을</span>— 장기, 중장기, 장기 액션 플랜을 제시하여 더 나은 선택을 할 수 있도록 도와드려요.
+            </p>
+          </div>
         </div>
+
+
 
         <!-- 면책 문구 -->
         <p class="mt-12 text-center text-sm text-primary">
@@ -273,11 +296,11 @@ import Layout from '../layouts/Layout.astro';
       <div class="max-w-5xl mx-auto">
         <p class="text-primary text-sm font-medium mb-4 tracking-wide text-center">FEATURES</p>
         <h2 class="text-2xl md:text-3xl lg:text-4xl font-normal text-center mb-4 leading-[1.3]">
-          당신은 대화만 하세요,<br />
+          대화만 하세요,<br />
           <span class="text-primary">기록은 멜로가 합니다</span>
         </h2>
         <p class="text-center text-foreground-muted mb-16">
-          귀찮은 건 멜로에게 맡기세요
+          의지가 필요한 건 멜로에게 맡기세요
         </p>
 
         <div class="space-y-20">
@@ -285,7 +308,7 @@ import Layout from '../layouts/Layout.astro';
           <div class="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 class="text-xl md:text-2xl font-normal mb-4 text-primary">
-                자동 일기과 카테고리 생성
+                자동 일기와 카테고리 생성
               </h3>
               <p class="text-foreground-muted leading-relaxed">
                 일기 쓰기가 정신 건강에 좋다는 사실을 모르는 사람은 없을거에요.<br />
@@ -363,7 +386,7 @@ import Layout from '../layouts/Layout.astro';
               <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
             </summary>
             <p class="mt-4 text-foreground-muted leading-relaxed">
-              멜로는 전문적인 치료가 아닌 '셀프 케어' 도구입니다.<br />
+              마인드 플래닛은 전문적인 치료가 아닌 '셀프 케어' 도구입니다.<br />
               하지만 일상적인 멘탈 관리와 자기 이해에는 상담 못지않은 통찰을 드립니다.
             </p>
           </details>
@@ -371,14 +394,28 @@ import Layout from '../layouts/Layout.astro';
           <!-- FAQ 3 -->
           <details class="group p-6 bg-background rounded-2xl border border-border">
             <summary class="flex justify-between items-center cursor-pointer list-none">
-              <span class="text-lg font-normal text-foreground">Q. 사용법이 어렵지는 않나요?</span>
+              <span class="text-lg font-normal text-foreground">Q. 어떤 방식으로 분석하나요?</span>
               <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
             </summary>
             <p class="mt-4 text-foreground-muted leading-relaxed">
-              카카오톡을 할 줄 아는 분이라면 누구나 가능합니다.<br />
-              멜로가 먼저 질문을 던져주니까요.
+              먼저, 기분을 기록합니다. 그리고 멜로 AI가 묻는 질문에 대답만 하세요.<br />
+              300자 내외의 대답만으로도 충분히 통찰력 있는 리포트가 발급됩니다.
             </p>
           </details>
+
+                    <!-- FAQ 4 -->
+          <details class="group p-6 bg-background rounded-2xl border border-border">
+            <summary class="flex justify-between items-center cursor-pointer list-none">
+              <span class="text-lg font-normal text-foreground">Q. 무료인가요?</span>
+              <span class="text-primary text-2xl group-open:rotate-45 transition-transform">+</span>
+            </summary>
+            <p class="mt-4 text-foreground-muted leading-relaxed">
+              마인드 플래닛은 부분 유료 앱입니다<br />
+              최초 3회 무료 분석 리포트를 제공하며, 구독 시 일주일 체험 기간이 있어요.<br />
+              내 삶에 도움이 될 것 같다는 확신이 들 경우만 개별 구매 혹은 구독 해 주세요.
+            </p>
+          </details>
+
         </div>
       </div>
     </section>
@@ -433,9 +470,36 @@ import Layout from '../layouts/Layout.astro';
     </section>
 
     <!-- Footer -->
-    <footer class="py-8 px-6 border-t border-border">
-      <div class="max-w-6xl mx-auto text-center text-muted">
-        <p>&copy; 2025 Playke. All rights reserved.</p>
+    <footer class="py-12 px-6 border-t border-border bg-background">
+      <div class="max-w-6xl mx-auto">
+        <!-- 상단: 로고 & 링크 -->
+        <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-10">
+          <div>
+            <img src="/logo_mp.svg" alt="마인드 플래닛" class="h-6 w-auto mb-4" />
+            <p class="text-muted text-sm">AI와 함께하는 감정 일기 & 심리 분석</p>
+          </div>
+          <div class="flex gap-8 text-sm">
+            <a href="/terms-of-service-kr" class="text-muted hover:text-foreground transition-colors">이용약관</a>
+            <a href="/privacy-policy-kr" class="text-muted hover:text-foreground transition-colors">개인정보처리방침</a>
+            <a href="mailto:contact@playke.app" class="text-muted hover:text-foreground transition-colors">고객센터</a>
+          </div>
+        </div>
+
+        <!-- 사업자 정보 -->
+        <div class="border-t border-border pt-8 text-xs text-muted leading-relaxed space-y-1">
+          <p><span class="text-foreground-muted">상호명</span> [회사명]</p>
+          <p><span class="text-foreground-muted">대표자</span> [대표자명]</p>
+          <p><span class="text-foreground-muted">사업자등록번호</span> [000-00-00000]</p>
+          <p><span class="text-foreground-muted">통신판매업신고</span> [제0000-서울XX-0000호]</p>
+          <p><span class="text-foreground-muted">주소</span> [사업장 주소]</p>
+          <p><span class="text-foreground-muted">이메일</span> [contact@example.com]</p>
+          <p><span class="text-foreground-muted">전화번호</span> [00-0000-0000]</p>
+        </div>
+
+        <!-- 저작권 -->
+        <div class="mt-8 pt-6 border-t border-border text-center text-xs text-muted">
+          <p>&copy; 2025 Playke Inc. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   </main>
