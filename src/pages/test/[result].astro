@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ResultView from '../../components/test/ResultView';
+import { decodeResult, isValidResultCode } from '../../lib/resultEncoder';
+import { calculateResultFromScores, blackHole } from '../../lib/scoring';
+
+export const prerender = false;
+
+const { result } = Astro.params;
+
+// 유효하지 않은 결과 코드 처리
+if (!result || !isValidResultCode(result)) {
+  return Astro.redirect('/test');
+}
+
+const scores = decodeResult(result);
+if (!scores) {
+  return Astro.redirect('/test');
+}
+
+const testResult = calculateResultFromScores(scores);
+const displayPlanet = testResult.isBlackHole ? blackHole : testResult.mainPlanet;
+
+const title = `나의 마음 행성은 "${displayPlanet.planetName}" | 마인드 플래닛`;
+const description = displayPlanet.message;
+const ogImage = `${Astro.url.origin}/api/og/${result}.png`;
+---
+
+<Layout title={title} description={description} ogImage={ogImage}>
+  <!-- 상세 페이지 GNB (뒤로가기) -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 flex items-center">
+      <a href="/test" class="flex items-center gap-2 text-base text-foreground-muted hover:text-foreground transition-colors">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>테스트 다시하기</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="min-h-screen bg-background pt-16">
+    <ResultView
+      client:load
+      resultCode={result}
+      mainPlanet={testResult.isBlackHole ? null : testResult.mainPlanet}
+      subPlanets={testResult.subPlanets}
+      isBlackHole={testResult.isBlackHole}
+      totalScore={testResult.totalScore}
+    />
+  </main>
+</Layout>

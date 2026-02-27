@@ -4,11 +4,13 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
 }
 
 const {
   title,
-  description = '마인드 플래닛 - AI와 함께하는 감정 일기 & CBT 코칭 앱'
+  description = '마인드 플래닛 - AI와 함께하는 감정 일기 & CBT 코칭 앱',
+  ogImage
 } = Astro.props;
 ---
 
@@ -31,6 +33,16 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    {ogImage && (
+      <>
+        <meta property="og:image" content={ogImage} />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={ogImage} />
+      </>
+    )}
+    <slot name="head" />
 
     <title>{title}</title>
   </head>

@@ -1,0 +1,27 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import TestContainer from '../../components/test/TestContainer';
+---
+
+<Layout
+  title="마음 행성 테스트 - 마인드 플래닛"
+  description="24문항으로 알아보는 나의 마음 속 지배 행성. 12가지 인지 패턴을 분석해보세요."
+>
+  <!-- GNB -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
+    <div class="max-w-6xl mx-auto px-6 h-16 grid grid-cols-3 items-center">
+      <a href="/" class="flex-shrink-0">
+        <img src="/logo_mp.svg" alt="마인드 플래닛" class="h-5 w-auto brightness-0 invert" />
+      </a>
+      <div class="flex items-center justify-center gap-8">
+        <a href="/" class="text-base text-foreground-muted hover:text-foreground transition-colors">마인드 플래닛</a>
+        <a href="/test" class="text-base text-primary font-medium transition-colors">마음 행성 심리 테스트</a>
+      </div>
+      <div></div>
+    </div>
+  </nav>
+
+  <main class="min-h-screen bg-background">
+    <TestContainer client:load />
+  </main>
+</Layout>
