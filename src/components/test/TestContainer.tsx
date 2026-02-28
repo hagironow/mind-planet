@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { questions, TOTAL_QUESTIONS } from '../../data/questions';
+import { questionsByAge, TOTAL_QUESTIONS, type AgeGroup } from '../../data/questions';
 import { calculateScores } from '../../lib/scoring';
 import { encodeResult } from '../../lib/resultEncoder';
 
-type TestPhase = 'intro' | 'testing' | 'calculating';
+type TestPhase = 'intro' | 'age_selection' | 'testing' | 'calculating';
 
 const STORAGE_KEY = 'mindplanet_test_progress';
+const AGE_STORAGE_KEY = 'mindplanet_age_group';
 
 const SCORE_OPTIONS = [
   { score: 1, label: '매우 아니다' },
@@ -15,9 +16,25 @@ const SCORE_OPTIONS = [
   { score: 5, label: '매우 그렇다' },
 ];
 
+const AGE_OPTIONS: { value: AgeGroup; label: string; emoji: string }[] = [
+  { value: 'teens', label: '10대', emoji: '🎒' },
+  { value: 'twenties', label: '20대', emoji: '🎓' },
+  { value: 'thirties', label: '30대', emoji: '💼' },
+  { value: 'forties_plus', label: '40대 이상', emoji: '🌳' },
+];
+
 export default function TestContainer() {
   const [phase, setPhase] = useState<TestPhase>('intro');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [ageGroup, setAgeGroup] = useState<AgeGroup | null>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(AGE_STORAGE_KEY);
+      if (saved && ['teens', 'twenties', 'thirties', 'forties_plus'].includes(saved)) {
+        return saved as AgeGroup;
+      }
+    }
+    return null;
+  });
   const [answers, setAnswers] = useState<number[]>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem(STORAGE_KEY);
@@ -38,17 +55,34 @@ export default function TestContainer() {
     }
   }, [answers]);
 
-  const handleStart = () => {
-    if (answers.length > 0) {
-      setCurrentIndex(Math.min(answers.length, TOTAL_QUESTIONS - 1));
+  useEffect(() => {
+    if (ageGroup) {
+      localStorage.setItem(AGE_STORAGE_KEY, ageGroup);
     }
-    setPhase('testing');
+  }, [ageGroup]);
+
+  const handleStart = () => {
+    // 기존 진행 상황이 있고, 연령대도 저장되어 있으면 바로 테스트로
+    if (answers.length > 0 && ageGroup) {
+      setCurrentIndex(Math.min(answers.length, TOTAL_QUESTIONS - 1));
+      setPhase('testing');
+    } else {
+      // 새로 시작하거나 연령대가 없으면 연령대 선택으로
+      setPhase('age_selection');
+    }
   };
 
   const handleRestart = () => {
     setAnswers([]);
     setCurrentIndex(0);
+    setAgeGroup(null);
     localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(AGE_STORAGE_KEY);
+    setPhase('age_selection');
+  };
+
+  const handleAgeSelect = (age: AgeGroup) => {
+    setAgeGroup(age);
     setPhase('testing');
   };
 
@@ -63,6 +97,7 @@ export default function TestContainer() {
         const scores = calculateScores(newAnswers);
         const resultCode = encodeResult(scores);
         localStorage.removeItem(STORAGE_KEY);
+        localStorage.removeItem(AGE_STORAGE_KEY);
         window.location.href = `/test/${resultCode}`;
       }, 1500);
     } else {
@@ -78,6 +113,7 @@ export default function TestContainer() {
     }
   };
 
+  const questions = ageGroup ? questionsByAge[ageGroup] : questionsByAge.twenties;
   const progress = ((currentIndex + 1) / TOTAL_QUESTIONS) * 100;
   const currentQuestion = questions[currentIndex];
 
@@ -102,9 +138,9 @@ export default function TestContainer() {
               onClick={handleStart}
               className="w-full py-4 px-6 bg-primary text-background font-semibold rounded-xl hover:opacity-90 transition-opacity"
             >
-              {answers.length > 0 ? '이어서 하기' : '테스트 시작하기'}
+              {answers.length > 0 && ageGroup ? '이어서 하기' : '테스트 시작하기'}
             </button>
-            {answers.length > 0 && (
+            {answers.length > 0 && ageGroup && (
               <button
                 onClick={handleRestart}
                 className="w-full py-3 px-6 border border-border text-foreground-muted rounded-xl hover:bg-surface transition-colors"
@@ -128,6 +164,47 @@ export default function TestContainer() {
               <p>히든 결과</p>
             </div>
           </div>
+        </div>
+      </div>
+    );
+  }
+
+  // 연령대 선택 화면
+  if (phase === 'age_selection') {
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center px-6">
+        <div className="max-w-md w-full text-center">
+          <div className="text-5xl mb-6">🎂</div>
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+            연령대를 선택해주세요
+          </h2>
+          <p className="text-foreground-muted mb-8">
+            더 공감되는 상황으로 테스트를 진행합니다
+          </p>
+
+          <div className="grid grid-cols-2 gap-4">
+            {AGE_OPTIONS.map(({ value, label, emoji }) => (
+              <button
+                key={value}
+                onClick={() => handleAgeSelect(value)}
+                className="p-6 bg-surface border border-border rounded-2xl hover:border-primary hover:bg-surface/80 transition-all group"
+              >
+                <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">
+                  {emoji}
+                </div>
+                <div className="text-lg font-semibold text-foreground">
+                  {label}
+                </div>
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={() => setPhase('intro')}
+            className="mt-8 text-foreground-muted hover:text-foreground transition-colors"
+          >
+            ← 뒤로 가기
+          </button>
         </div>
       </div>
     );
