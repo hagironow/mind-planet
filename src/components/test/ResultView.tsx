@@ -141,6 +141,22 @@ export default function ResultView({
           </div>
         )}
 
+        {/* 이렇게 해보세요 (3순위) */}
+        <div className="bg-surface rounded-2xl border border-border p-6 mb-6">
+          <h3 className="text-primary font-medium mb-3 flex items-center gap-2">
+            <span>💫</span>
+            <span>이렇게 해보세요</span>
+          </h3>
+          <p className="text-foreground leading-relaxed mb-4">
+            {displayPlanet?.advice}
+          </p>
+          <div className="pt-4 border-t border-border">
+            <p className="text-foreground-muted text-sm italic">
+              "{displayPlanet?.encouragement}"
+            </p>
+          </div>
+        </div>
+
         {/* 위성 (블랙홀이 아닐 때만) - 상세 설명 추가 */}
         {!isBlackHole && subPlanets.length > 0 && (
           <div className="mb-6">
@@ -168,19 +184,6 @@ export default function ResultView({
             </div>
           </div>
         )}
-
-        {/* 조언 카드 */}
-        <div className="bg-surface rounded-2xl border border-border p-6 mb-6">
-          <h3 className="text-sm text-primary mb-3">이렇게 해보세요</h3>
-          <p className="text-foreground leading-relaxed mb-4">
-            {displayPlanet?.advice}
-          </p>
-          <div className="pt-4 border-t border-border">
-            <p className="text-foreground-muted text-sm italic">
-              "{displayPlanet?.encouragement}"
-            </p>
-          </div>
-        </div>
 
         {/* 블랙홀 경고 */}
         {isBlackHole && (
