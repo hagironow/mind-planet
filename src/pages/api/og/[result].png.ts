@@ -1,10 +1,21 @@
 import type { APIRoute } from 'astro';
 import satori from 'satori';
-import { Resvg } from '@resvg/resvg-js';
+import { Resvg, initWasm } from '@resvg/resvg-wasm';
 import { decodeResult, isValidResultCode } from '../../../lib/resultEncoder';
 import { calculateResultFromScores, blackHole } from '../../../lib/scoring';
 
 export const prerender = false;
+
+// WASM 초기화 상태
+let wasmInitialized = false;
+
+async function ensureWasmInitialized() {
+  if (!wasmInitialized) {
+    const wasmModule = await import('@resvg/resvg-wasm/index_bg.wasm?module');
+    await initWasm(wasmModule.default);
+    wasmInitialized = true;
+  }
+}
 
 // 폰트 캐시
 let fontData: ArrayBuffer | null = null;
@@ -39,6 +50,7 @@ export const GET: APIRoute = async ({ params }) => {
   const displayPlanet = testResult.isBlackHole ? blackHole : testResult.mainPlanet;
 
   try {
+    await ensureWasmInitialized();
     const font = await loadFont();
 
     // Satori로 SVG 생성

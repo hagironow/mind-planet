@@ -25,10 +25,13 @@ export default function ResultView({
 
   // Web Share API 지원 여부 확인 (모바일에서 주로 지원)
   useEffect(() => {
-    if (typeof navigator !== 'undefined' && navigator.share) {
+    const checkShareSupport = async () => {
+    if (typeof navigator !== 'undefined' && await navigator.share()) {
       setCanShare(true);
     }
-  }, []);
+  };
+  checkShareSupport();
+}, []);
 
   const handleCopyLink = async () => {
     try {
@@ -287,7 +290,9 @@ export default function ResultView({
           {/* 앱스토어 버튼 */}
           <div className="flex flex-col sm:flex-row gap-2">
             <a
-              href="#"
+              href="https://apps.apple.com/app/id6747863029"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity"
               aria-label="Download on the App Store"
             >
@@ -297,7 +302,9 @@ export default function ResultView({
               <span className="text-sm font-medium">App Store</span>
             </a>
             <a
-              href="#"
+              href="https://play.google.com/store/apps/details?id=app.playke.melo"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-1 flex items-center justify-center gap-2 py-3 px-4 bg-foreground text-background rounded-xl hover:opacity-90 transition-opacity"
               aria-label="Get it on Google Play"
             >
