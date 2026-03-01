@@ -1,0 +1,83 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Refund Policy - Mind Planet">
+  <main class="min-h-screen pt-24 pb-16 px-6 bg-background">
+    <article class="max-w-3xl mx-auto">
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex items-center gap-4 mb-6">
+          <a href="/refund-policy-kr" class="text-sm px-3 py-1 bg-surface text-muted rounded-full hover:text-foreground transition-colors">KR</a>
+          <a href="/refund-policy-en" class="text-sm px-3 py-1 bg-primary/20 text-primary rounded-full">EN</a>
+        </div>
+        <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Refund Policy</h1>
+        <p class="text-muted">Effective date: July 1, 2025 · Last updated: March 1, 2026</p>
+      </header>
+
+      <!-- Content -->
+      <div class="space-y-12 text-foreground-muted leading-relaxed">
+
+        <!-- Section 1 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">1. General Principles</h2>
+          <div class="space-y-4">
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Full Refund</p>
+              <p>Within 7 days of purchase, if no features have been used</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Partial Refund</p>
+              <p>For refund requests after 7 days, a partial refund will be issued after deducting the regular price for the months used.</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Package Plans</p>
+              <p>Due to store policies, partial refunds are not available for package plans. No refunds are available once any session has been used.</p>
+            </div>
+          </div>
+          <div class="mt-4 p-4 bg-primary/10 border border-primary/30 rounded-xl">
+            <p class="text-sm text-foreground font-medium">All refund policies are subject to and superseded by each store's policies.</p>
+          </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">2. Subscription Cancellation</h2>
+          <p>Subscriptions are managed through Google Play or Apple App Store. Balance calculation and refund processing are handled according to each store's policies.</p>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Google Play</p>
+              <p class="text-sm">Play Store app → Profile → Payments & subscriptions → Subscriptions</p>
+            </div>
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-2">Apple App Store</p>
+              <p class="text-sm">Settings → Apple ID → Subscriptions</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section>
+          <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">3. Refund Requests & Inquiries</h2>
+          <ul class="list-disc list-inside space-y-3 ml-4">
+            <li>Cancel your subscription in the app's 'Purchase & Membership Management' page, then follow each store's refund procedure.</li>
+            <li>Refunds are processed according to each store's policy and may take <span class="text-foreground font-medium">up to 14 days</span>.</li>
+            <li>For refund-related inquiries, please contact each store's customer support.</li>
+          </ul>
+        </section>
+
+        <!-- Contact -->
+        <section class="bg-surface rounded-xl p-6">
+          <p class="mb-2"><span class="text-foreground-muted">Contact:</span> <span class="text-foreground">hagironow@gmail.com</span></p>
+          <p><span class="text-foreground-muted">Company:</span> <span class="text-foreground">Playke, Seoul, Korea</span></p>
+        </section>
+
+      </div>
+
+      <!-- Back to home -->
+      <div class="mt-16 pt-8 border-t border-border">
+        <a href="/" class="text-primary hover:underline">&larr; Back to Home</a>
+      </div>
+    </article>
+  </main>
+</Layout>
