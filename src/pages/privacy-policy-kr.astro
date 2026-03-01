@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
           <a href="/privacy-policy-en" class="text-sm px-3 py-1 bg-surface text-muted rounded-full hover:text-foreground transition-colors">EN</a>
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">개인정보 보호정책</h1>
-        <p class="text-muted">시행일: 2025년 7월 1일 · 최종 수정일: 2026년 2월 23일</p>
+        <p class="text-muted">시행일: 2025년 7월 1일 · 최종 수정일: 2026년 3월 1일</p>
       </header>
 
       <!-- Content -->
@@ -73,19 +73,37 @@ import Layout from '../layouts/Layout.astro';
         <!-- Section 4 -->
         <section>
           <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">4. 제3자 AI 서비스 제공업체와의 공유</h2>
-          <p class="mb-4">AI 분석을 제공하기 위해 다음 제공업체와 최소한의 필요 데이터를 공유합니다:</p>
-          <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <p class="mb-4">마음 분석을 위해 다음 AI 서비스 제공업체와 데이터를 공유합니다:</p>
+
+          <div class="space-y-4 mb-4">
             <div class="bg-surface rounded-xl p-5">
-              <p class="text-primary font-medium mb-2">제공업체</p>
-              <p>OpenAI (API), Google (Gemini API)</p>
+              <p class="text-primary font-medium mb-2">AI 서비스 제공업체</p>
+              <p class="text-foreground font-medium">OpenAI (API), Google (Gemini API)</p>
             </div>
+
             <div class="bg-surface rounded-xl p-5">
-              <p class="text-primary font-medium mb-2">공유되는 데이터</p>
-              <p>사용자가 입력한 텍스트 (로그/노트)만 해당</p>
+              <p class="text-primary font-medium mb-3">공유되는 데이터</p>
+              <ul class="list-disc list-inside space-y-2 ml-2">
+                <li>채팅 메시지 및 감정 일기 내용</li>
+                <li>감정 강도 및 감정 키워드</li>
+                <li>인지 왜곡 패턴 기록</li>
+                <li>닉네임, 연령대, 고민 영역</li>
+              </ul>
+            </div>
+
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-3">데이터 보호</p>
+              <ul class="list-disc list-inside space-y-2 ml-2">
+                <li>모든 데이터는 암호화되어 안전하게 전송됩니다</li>
+                <li>전송된 데이터는 분석 목적으로만 사용됩니다</li>
+                <li><span class="text-foreground font-medium">AI 모델 학습에는 사용되지 않습니다</span></li>
+              </ul>
             </div>
           </div>
-          <div class="p-4 bg-surface-bright rounded-xl border border-border">
-            <p class="text-sm"><span class="text-foreground">정책:</span> 개인 식별 정보(이름, 이메일, 단축 코드)는 공유되지 않습니다. 데이터는 실시간으로 처리되며 AI 모델 학습에 사용되지 않습니다.</p>
+
+          <div class="p-4 bg-primary/10 border border-primary/30 rounded-xl">
+            <p class="text-foreground font-medium mb-2">명시적 동의</p>
+            <p class="text-sm">서비스 최초 이용 시 온보딩 과정에서 AI 데이터 공유에 대한 명시적 동의를 받습니다. 동의하지 않으면 AI 분석 기능을 이용할 수 없습니다. 동의는 앱 설정에서 언제든지 철회할 수 있으며, 철회 시 AI 기능 이용이 제한됩니다.</p>
           </div>
         </section>
 
@@ -126,7 +144,7 @@ import Layout from '../layouts/Layout.astro';
             <li>앱 내 "고객센터" 또는 이메일로 요청을 제출하세요</li>
           </ul>
           <div class="bg-surface rounded-xl p-5">
-            <p class="text-primary font-medium">연락처: melo@playke.app</p>
+            <p class="text-primary font-medium">연락처: hagironow@gmail.com</p>
           </div>
         </section>
 
@@ -149,7 +167,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Contact -->
         <section class="bg-surface rounded-xl p-6">
-          <p class="mb-2"><span class="text-foreground-muted">연락처:</span> <span class="text-foreground">melo@playke.app</span></p>
+          <p class="mb-2"><span class="text-foreground-muted">연락처:</span> <span class="text-foreground">hagironow@gmail.com</span></p>
           <p><span class="text-foreground-muted">회사:</span> <span class="text-foreground">플레이크, 서울, 대한민국</span></p>
         </section>
 

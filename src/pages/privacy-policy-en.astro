@@ -12,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
           <a href="/privacy-policy-en" class="text-sm px-3 py-1 bg-primary/20 text-primary rounded-full">EN</a>
         </div>
         <h1 class="text-3xl md:text-4xl font-bold text-foreground mb-4">Privacy Policy</h1>
-        <p class="text-muted">Effective date: July 1, 2025 · Last updated: February 23, 2026</p>
+        <p class="text-muted">Effective date: July 1, 2025 · Last updated: March 1, 2026</p>
       </header>
 
       <!-- Content -->
@@ -73,19 +73,37 @@ import Layout from '../layouts/Layout.astro';
         <!-- Section 4 -->
         <section>
           <h2 class="text-xl font-semibold text-foreground mb-4 pb-2 border-b border-border">4. Sharing with Third-party AI Service Providers</h2>
-          <p class="mb-4">To provide AI analysis, we share the minimum necessary data with the following providers:</p>
-          <div class="grid md:grid-cols-2 gap-4 mb-4">
+          <p class="mb-4">To provide emotional analysis, we share data with the following AI service providers:</p>
+
+          <div class="space-y-4 mb-4">
             <div class="bg-surface rounded-xl p-5">
-              <p class="text-primary font-medium mb-2">Providers</p>
-              <p>OpenAI (API), Google (Gemini API)</p>
+              <p class="text-primary font-medium mb-2">AI Service Providers</p>
+              <p class="text-foreground font-medium">OpenAI (API), Google (Gemini API)</p>
             </div>
+
             <div class="bg-surface rounded-xl p-5">
-              <p class="text-primary font-medium mb-2">Data Shared</p>
-              <p>User-entered text (logs/notes) only</p>
+              <p class="text-primary font-medium mb-3">Data Shared</p>
+              <ul class="list-disc list-inside space-y-2 ml-2">
+                <li>Chat messages and emotion diary entries</li>
+                <li>Emotion intensity and emotion keywords</li>
+                <li>Cognitive distortion pattern records</li>
+                <li>Nickname, age range, and concern areas</li>
+              </ul>
+            </div>
+
+            <div class="bg-surface rounded-xl p-5">
+              <p class="text-primary font-medium mb-3">Data Protection</p>
+              <ul class="list-disc list-inside space-y-2 ml-2">
+                <li>All data is securely encrypted during transmission</li>
+                <li>Transmitted data is used only for analysis purposes</li>
+                <li><span class="text-foreground font-medium">Data is NOT used to train AI models</span></li>
+              </ul>
             </div>
           </div>
-          <div class="p-4 bg-surface-bright rounded-xl border border-border">
-            <p class="text-sm"><span class="text-foreground">Policy:</span> No personal identifiers (names, emails, or short codes) are shared. Data is processed in real-time and is NOT used to train AI models.</p>
+
+          <div class="p-4 bg-primary/10 border border-primary/30 rounded-xl">
+            <p class="text-foreground font-medium mb-2">Explicit Consent</p>
+            <p class="text-sm">Explicit consent for AI data sharing is obtained during the onboarding process before first use. AI analysis features cannot be used without consent. Consent can be withdrawn at any time in the app settings, which will limit access to AI features.</p>
           </div>
         </section>
 
@@ -126,7 +144,7 @@ import Layout from '../layouts/Layout.astro';
             <li>Submit requests via the in-app "Help Center" or email us</li>
           </ul>
           <div class="bg-surface rounded-xl p-5">
-            <p class="text-primary font-medium">Contact: melo@playke.app</p>
+            <p class="text-primary font-medium">Contact: hagironow@gmail.com</p>
           </div>
         </section>
 
@@ -149,7 +167,7 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Contact -->
         <section class="bg-surface rounded-xl p-6">
-          <p class="mb-2"><span class="text-foreground-muted">Contact:</span> <span class="text-foreground">melo@playke.app</span></p>
+          <p class="mb-2"><span class="text-foreground-muted">Contact:</span> <span class="text-foreground">hagironow@gmail.com</span></p>
           <p><span class="text-foreground-muted">Company:</span> <span class="text-foreground">Playke, Seoul, Korea</span></p>
         </section>
 
